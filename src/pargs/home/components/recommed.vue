@@ -2,7 +2,7 @@
     <div>
         <div class="recommend-title">热销推荐</div>
         <ul>
-            <li class="item border-bottom" v-for="item of recommedList" :key="item.id">
+            <li class="item border-bottom" v-for="item of list" :key="item.id">
                     <img class="item-img" :src="item.imgurl">
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
@@ -18,32 +18,8 @@
 <script>
 export default {
     name:"HomeRecommed",
-    data(){
-        return{recommedList:[{
-            id:'001',
-            imgurl:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-            title:'故宫',
-            desc:'世界五大宫之首，穿越与您近在咫尺'
-        },
-        {
-            id:'002',
-            imgurl:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-            title:'故宫',
-            desc:'世界五大宫之首，穿越与您近在咫尺'
-        },
-        {
-            id:'003',
-            imgurl:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-            title:'故宫',
-            desc:'世界五大宫之首，穿越与您近在咫尺'
-        },
-        {
-            id:'004',
-            imgurl:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-            title:'故宫',
-            desc:'世界五大宫之首，穿越与您近在咫尺'
-        },
-        ]} 
+    props:{
+        list:Array
     }
 }
 </script>

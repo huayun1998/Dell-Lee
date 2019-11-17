@@ -2,7 +2,7 @@
     <div>
         <div class="weekend">周末去哪儿</div>
         <ul>
-            <li class="item border-bottom" v-for="item of recommedList" :key="item.id">
+            <li class="item border-bottom" v-for="item of list" :key="item.id">
                     <div class="item-img-weekend"> 
                         <img class="item-img" :src="item.imgurl">
                     </div>
@@ -20,32 +20,8 @@
 <script>
 export default {
     name:"HomeRecommed",
-    data(){
-        return{recommedList:[{
-            id:'001',
-            imgurl:'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-            title:'故宫',
-            desc:'世界五大宫之首，穿越与您近在咫尺'
-        },
-        {
-            id:'002',
-            imgurl:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-            title:'故宫',
-            desc:'世界五大宫之首，穿越与您近在咫尺'
-        },
-        {
-            id:'003',
-            imgurl:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-            title:'故宫',
-            desc:'世界五大宫之首，穿越与您近在咫尺'
-        },
-        {
-            id:'004',
-            imgurl:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-            title:'故宫',
-            desc:'世界五大宫之首，穿越与您近在咫尺'
-        },
-        ]} 
+    props:{
+        list:Array
     }
 }
 </script>
