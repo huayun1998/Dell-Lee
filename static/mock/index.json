@@ -1,6 +1,7 @@
 {
     "ret": true,
     "data": {
+        "city": "北京",
         "swiperList": [{
                 "id": "0001",
                 "imgurl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201910/e7eac5a5e99e6517c61b953c0fece63b.jpg_750x200_4b701cf8.jpg"
