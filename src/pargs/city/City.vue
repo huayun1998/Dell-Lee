@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import CityHeader from './components/Cityheader'
 import CitySearch from './components/Search'
 import CityList from './components/List'
@@ -20,7 +21,18 @@ export default {
         CitySearch,
         CityList,
         CityAlphabet,
-    }
+    },
+    methods: {
+        getCityInof(){
+            this.axios.get('/api/city.json').then(this.handleGetCityInfoSucc)
+        },
+        handleGetCityInfoSucc(res){
+            console.log(res)
+        }
+    },
+    mounted() {
+        this.getCityInfo()
+    },
 }
 </script>
 

@@ -25,9 +25,9 @@ export default {
         right 0
         bottom 0
         width .4rem
-        display flex
-        flex-direction column
-        justify-content center 
+        display flex //设置其属性为flex flex可以进行弹性布局
+        flex-direction column //使list以竖状排列
+        justify-content center //使列表处于竖状排列居中
         .item
             line-height .45rem
             text-align center
