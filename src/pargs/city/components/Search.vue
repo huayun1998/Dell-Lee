@@ -9,7 +9,10 @@
       <ul >
         <li 
           class="search-item border-bottom" 
-          v-for="item of list" :key="item.id">
+          v-for="item of list" 
+          :key="item.id"
+          @click="handleCityClick(item.name)"
+          >
             {{item.name}}</li>
         <li class="search-item border-bottom" v-show="hasNoData">
             没有找到匹配数据</li>
@@ -61,6 +64,12 @@ export default {
     },
     mounted() {
         this.srcoll = new Bscroll(this.$refs.search)
+    },
+    methods: {
+        handleCityClick(city){
+            this.$store.commit('incerment', city)
+            this.$router.push('/')
+        }
     },
 }
 </script>

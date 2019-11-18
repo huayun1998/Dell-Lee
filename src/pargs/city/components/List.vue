@@ -5,7 +5,7 @@
                 <div class="title border-topbottom">当前城市</div>
                 <div class="buttom-list">
                     <div class="buttom-wrapper">
-                        <div class="buttom">北京</div>
+                        <div class="buttom">{{this.$store.state.city}}</div>
                     </div>
                 </div>
             </div>
@@ -13,7 +13,9 @@
                 <div class="title border-topbottom">热门城市</div>
                 <div class="buttom-list">
                     <div class="buttom-wrapper" 
-                    v-for="item of hot" :key="item.id">
+                    v-for="item of hot" :key="item.id"
+                    @click="handleCityClick(item.name)"
+                    >
                         <div class="buttom">{{item.name}}</div>
                     </div>
                 </div>  
@@ -25,7 +27,9 @@
                 :key=innerItem.id
                 :ref="key"
                 >
-                    <div class="item border-bottom"> {{innerItem.name}}</div>
+                    <div class="item border-bottom"
+                    @click="handleCityClick(innerItem.name)"
+                    > {{innerItem.name}}</div>
                 </div>
             </div>
         </div>
@@ -51,6 +55,12 @@ export default {
                 //srcoll.scrollToElement传入一个dom元素
                 this.srcoll.scrollToElement(this.$refs[this.letter][0])
             }
+        }
+    },
+    methods: {
+        handleCityClick(city){
+            this.$store.commit('incerment', city)
+            this.$router.push('/')
         }
     },
 }
