@@ -20,7 +20,11 @@
             </div>
             <div class="area" v-for="(item,key) of cities" :key="key">
                 <div class="title border-topbottom" >{{key}}</div>
-                <div class="item-list" v-for="innerItem of item" :key=innerItem.id>
+                <div class="item-list" 
+                v-for="innerItem of item" 
+                :key=innerItem.id
+                :ref="key"
+                >
                     <div class="item border-bottom"> {{innerItem.name}}</div>
                 </div>
             </div>
@@ -37,8 +41,18 @@ export default {
     },
     props:{
         hot:Array,
-        cities:Object
-    }
+        cities:Object,
+        letter:String
+    },
+    watch: {
+        letter(){
+            //如果letter发生变化则触发下面这个事件
+            if(this.letter){
+                //srcoll.scrollToElement传入一个dom元素
+                this.srcoll.scrollToElement(this.$refs[this.letter][0])
+            }
+        }
+    },
 }
 </script>
 
